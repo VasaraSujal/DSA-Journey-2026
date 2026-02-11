@@ -1,7 +1,9 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        // Sieve of Eratosthenes :
+        // Sieve of Eratosthenes :   
+        // Time Complexity : O(nlog(logn))
+        
         vector<bool> isPrime(n+1, true);
         for(int i = 2; i*i <= n; i++) {
             if(isPrime[i] == true) {
