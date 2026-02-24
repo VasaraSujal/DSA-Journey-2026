@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int val;
+    int solve(TreeNode* root, int val) {
+        if(!root) return 0;
+        val = (2*val) + 1*(root->val);
+        if(root->left == NULL && root->right == NULL) return val;
+
+        return solve(root->left, val) + solve(root->right, val);
+    }
+
+    int sumRootToLeaf(TreeNode* root) {
+        return solve(root, 0);
+    }
+};
